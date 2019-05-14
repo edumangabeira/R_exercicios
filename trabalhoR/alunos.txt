@@ -1,0 +1,210 @@
+"Biologia" 8.6 "Ruim" 0.5
+"História" 9.6 "Boa" 12.5
+"Biologia" 7.8 "Ótima" 4.7
+"Matemática" 2.2 "Boa" 10.2
+"Matemática" 8.6 "Boa" 6
+"Matemática" 6.1 "Ótima" 10.5
+"Biologia" 5.3 "Boa" 11.9
+"Português" 4.4 "Boa" 10.6
+"Ed. Física" 9.6 "Boa" 8
+"Matemática" 9.2 "Ótima" 4.2
+"Matemática" 3.3 "Boa" 2.5
+"Química" 4.3 "Ruim" 4.1
+"Português" 8.7 "Ótima" 10
+"Matemática" 6.1 "Ruim" 5.1
+"Biologia" 6 "Regular" 12.9
+"Química" 1.5 "Boa" 10.9
+"Ed. Física" 10 "Regular" 2.1
+"Ed. Física" 5 "Boa" 13.2
+"Português" 0.7 "Ótima" 2.9
+"Química" 7.5 "Regular" 3.4
+"Português" 7.5 "Boa" 6
+"Português" 6.2 "Boa" 2.4
+"Física" 8.5 "Boa" 11.3
+"Física" 3 "Ótima" 3.8
+"História" 3.3 "Boa" 2.2
+"Física" 7.3 "Regular" 8
+"História" 9.9 "Ruim" 1.9
+"Ed. Física" 8.3 "Boa" 4.3
+"Química" 7.9 "Regular" 5.8
+"Geografia" 0.6 "Boa" 4.3
+"Química" 5.7 "Boa" 4.2
+"Química" 7.3 "Ótima" 2.3
+"Matemática" 6.4 "Boa" 11
+"Matemática" 9 "Ótima" 11.4
+"Português" 6.8 "Boa" 12.6
+"Ed. Física" 8.3 "Regular" 3.9
+"Matemática" 2.3 "Regular" 13.4
+"Biologia" 8.4 "Ruim" 16.5
+"Matemática" 0.7 "Boa" 10.9
+"Matemática" 5.9 "Boa" 5.6
+"Ed. Física" 9.7 "Ótima" 5.8
+"Biologia" 3.7 "Ótima" 3.2
+"Ed. Física" 7.1 "Boa" 3.7
+"Ed. Física" 7.1 "Regular" 12.5
+"Química" 8.6 "Boa" 9.5
+"Física" 10 "Ótima" 3
+"Português" 9.8 "Boa" 2
+"Ed. Física" 6.6 "Boa" 0.9
+"Matemática" 3.4 "Boa" 3.5
+"Biologia" 4.7 "Ruim" 0.7
+"Português" 7.8 "Regular" 0.5
+"Física" 7.6 "Boa" 10.6
+"Biologia" 4.1 "Boa" 6.3
+"Química" 9.9 "Regular" 10.4
+"Biologia" 0.7 "Regular" 11.9
+"Física" 6.2 "Boa" 10.4
+"Português" 7.8 "Ótima" 3.8
+"História" 9 "Boa" 2.5
+"Química" 6.3 "Ótima" 9.4
+"Química" 5 "Boa" 11.9
+"Matemática" 4.2 "Regular" 3.8
+"Biologia" 8.7 "Boa" 10.1
+"História" 8.9 "Boa" 0.7
+"História" 8.4 "Boa" 11.6
+"Matemática" 7.5 "Boa" 4.5
+"Português" 5 "Boa" 10.7
+"Ed. Física" 9.6 "Boa" 9.8
+"Química" 1.5 "Boa" 5.2
+"Biologia" 7.2 "Boa" 3.8
+"Português" 7.6 "Ótima" 14.2
+"Ed. Física" 8.9 "Boa" 10.1
+"Português" 8.2 "Boa" 4.9
+"Química" 7.2 "Boa" 5.6
+"Matemática" 7.2 "Boa" 4.1
+"Física" 3.7 "Regular" 10.3
+"Matemática" 6.7 "Boa" 4.2
+"Biologia" 9.6 "Boa" 5.8
+"Física" 4.5 "Boa" 12
+"Química" 9.5 "Ótima" 3
+"Química" 2.5 "Regular" 6.2
+"Química" 8.3 "Regular" 13.4
+"Ed. Física" 9 "Boa" 11.4
+"Ed. Física" 7.7 "Ruim" 7.1
+"Física" 7.9 "Boa" 0.8
+"Biologia" 8.3 "Ótima" 12.6
+"Ed. Física" 7.9 "Boa" 3.5
+"História" 9.4 "Boa" 5.9
+"Matemática" 8.2 "Ótima" 1.5
+"Geografia" 6.2 "Ótima" 10.3
+"Ed. Física" 5.2 "Boa" 2.3
+"Biologia" 7.5 "Regular" 10
+"Biologia" 7.7 "Boa" 6.3
+"História" 2.2 "Regular" 5.7
+"Português" 7.8 "Ótima" 4.4
+"Química" 7.1 "Boa" 15.4
+"Química" 9.9 "Ótima" 12.4
+"Matemática" 1.5 "Regular" 16.4
+"Matemática" 4.1 "Boa" 5.8
+"Biologia" 3.1 "Boa" 2.6
+"Física" 7.7 "Boa" 3.9
+"Ed. Física" 2.1 "Boa" 11.5
+"Física" 3.9 "Boa" 7.5
+"Química" 0.5 "Boa" 6.9
+"Biologia" 9 "Ótima" 1.1
+"Geografia" 8.5 "Ruim" 5.2
+"Ed. Física" 7.1 "Ótima" 8.6
+"Física" 7.2 "Ruim" 10.2
+"Biologia" 8 "Boa" 13.9
+"Física" 8.8 "Ótima" 12.3
+"Geografia" 8.7 "Ótima" 5
+"Geografia" 4.8 "Ótima" 4.4
+"Química" 4.8 "Boa" 6.7
+"Biologia" 8.9 "Ótima" 1.5
+"Geografia" 8.7 "Regular" 3.6
+"Ed. Física" 7.1 "Boa" 1.9
+"Ed. Física" 8.5 "Ótima" 5.8
+"Química" 6.1 "Boa" 12.1
+"Português" 9.1 "Ruim" 4.7
+"Português" 8.7 "Boa" 15.2
+"Ed. Física" 7.5 "Regular" 3.6
+"Ed. Física" 5.6 "Boa" 2.6
+"Ed. Física" 8.7 "Boa" 6.6
+"Ed. Física" 6.2 "Ótima" 9.3
+"Física" 8.2 "Boa" 6.4
+"Química" 7.1 "Boa" 11.5
+"Química" 9 "Boa" 12.9
+"Português" 9.5 "Ruim" 13.8
+"Química" 4.8 "Regular" 7.4
+"Biologia" 8.5 "Regular" 5.3
+"Ed. Física" 4.3 "Ótima" 6
+"Ed. Física" 6.7 "Boa" 14.8
+"Matemática" 7.2 "Boa" 9.7
+"Física" 3.6 "Regular" 5.2
+"Geografia" 8.1 "Boa" 11.1
+"Português" 8.3 "Boa" 4.9
+"Química" 6.7 "Boa" 12.2
+"Matemática" 5.4 "Boa" 3.6
+"Geografia" 6.4 "Boa" 6.3
+"Física" 5.6 "Boa" 3.4
+"Geografia" 6.9 "Boa" 9.7
+"Matemática" 2.9 "Boa" 4.3
+"História" 9.3 "Boa" 7.8
+"Geografia" 8.9 "Regular" 4.7
+"Português" 3.2 "Boa" 5.4
+"Português" 6.5 "Regular" 5.9
+"Ed. Física" 7 "Ótima" 8.3
+"Biologia" 7.9 "Boa" 3.1
+"Ed. Física" 7.7 "Boa" 11.6
+"Física" 1.3 "Regular" 13.8
+"História" 4.2 "Regular" 10.5
+"Ed. Física" 0.5 "Ruim" 3.1
+"Português" 3.2 "Boa" 3.6
+"Geografia" 2.6 "Ótima" 6.1
+"Biologia" 7.3 "Regular" 2.2
+"Português" 4.2 "Regular" 5.3
+"Ed. Física" 7.4 "Boa" 4.5
+"Português" 9.1 "Regular" 10.3
+"Física" 5.3 "Boa" 4
+"Geografia" 0.6 "Ótima" 4.3
+"Português" 3.4 "Ótima" 2.3
+"Português" 9.4 "Boa" 5.3
+"Biologia" 8.9 "Ótima" 4
+"Matemática" 9.1 "Boa" 12.3
+"Física" 9.7 "Boa" 14.3
+"Ed. Física" 4.2 "Ótima" 13.3
+"História" 3.1 "Ruim" 5.1
+"Biologia" 9.7 "Ótima" 14.7
+"Geografia" 3.5 "Boa" 3.2
+"Ed. Física" 7.8 "Regular" 6.1
+"Matemática" 5 "Boa" 5.7
+"Física" 4.7 "Ruim" 3.1
+"Biologia" 9.9 "Ruim" 2.6
+"Português" 7.5 "Ótima" 11.6
+"Matemática" 8.3 "Ótima" 14.8
+"Biologia" 7.4 "Regular" 11.7
+"História" 7.7 "Boa" 5.5
+"Biologia" 7.7 "Ruim" 4.8
+"Português" 5.5 "Boa" 12.5
+"Ed. Física" 2 "Boa" 5
+"Biologia" 4 "Ótima" 13.9
+"Física" 5.4 "Boa" 9.7
+"Matemática" 6.2 "Ruim" 4.5
+"História" 8.4 "Boa" 13.9
+"Química" 5.5 "Regular" 4.1
+"História" 7.5 "Boa" 14.2
+"Matemática" 8.9 "Regular" 5.2
+"Matemática" 4.9 "Boa" 16.5
+"Física" 8.2 "Boa" 4.5
+"Ed. Física" 9.5 "Boa" 9.6
+"História" 3.4 "Regular" 12.4
+"Química" 5.9 "Regular" 9.7
+"Física" 6.4 "Regular" 14.9
+"Química" 3.5 "Ótima" 4.9
+"Geografia" 8.9 "Ruim" 9.2
+"Ed. Física" 3.4 "Boa" 6.5
+"Português" 8.5 "Regular" 12.9
+"Ed. Física" 9.8 "Boa" 6.4
+"Geografia" 3.8 "Boa" 11.6
+"Matemática" 2.9 "Boa" 9.6
+"Química" 9.3 "Regular" 5
+"Química" 8.2 "Regular" 12.3
+"Química" 2.6 "Ótima" 5.1
+"Ed. Física" 7.3 "Boa" 2.6
+"Física" 5.9 "Boa" 1.1
+"Ed. Física" 8 "Boa" 10.3
+"Física" 5.7 "Regular" 8.6
+"Matemática" 7.7 "Regular" 4.3
+"Ed. Física" 8.7 "Boa" 3.6
+"Matemática" 4.2 "Boa" 12.3
+"Matemática" 8.9 "Ótima" 8.2
