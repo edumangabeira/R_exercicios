@@ -1,4 +1,4 @@
-DRE =  # Escreva aqui seu DRE (apos o sinal de =)
+DRE =  116137191 # Escreva aqui seu DRE (apos o sinal de =)
   
 # Rode o codigo abaixo ate o final uma unica vez
 set.seed(DRE)
