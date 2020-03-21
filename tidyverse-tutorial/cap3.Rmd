@@ -31,18 +31,235 @@ ggplot(data = mpg) +
 
 
 
-### (3.3) Aesthetic Mappings
+### 3.3 Aesthetic Mappings
+
+
+
+```{r}
+library(ggplot2)
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy, color = class))
+
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy, size = class))
+
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy, alpha = class), color = 'red')
+
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy, shape = class))
+```
+
+No exercício 6 é mostrado um jeito de como dividir as cores dos dados por valores lógicos.
+
+```{r}
+
+# Exercícios 3.3.1
+
+# 1,2,3,4)
+library(ggplot2)
+ggplot(data=mpg) + 
+  geom_point(mapping = aes(x=displ, y=cty, size=class, shape= drv, color = fl))
+
+
+
+# 6)
+# ISSO AQUI É IRADO
+ggplot(data=mpg) + 
+  geom_point(mapping = aes(x=displ, y=cty, color = displ < 5))
+
+
+```
+
+fui testando barplot pelo ggplot2
+
+```{r}
+library(ggplot2)
+ggplot(data=mpg) + 
+  geom_bar(aes(class))
+
+```
+
+# 3.5 Facets
+
+```{r}
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy, color = class)) + 
+  facet_wrap(~ class, nrow = 3)
+
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy, color = class)) + 
+  facet_grid(drv ~ cyl)
+```
+
+
+```{r}
+# Exercícios 3.5.1
+# 1)
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy, color = class)) + 
+  facet_wrap(~ displ, nrow = 3)
+
+# 3)
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_grid(drv ~ .)
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_grid(. ~ cyl)
+
+
+
+
+```
+
+
+# 3.6 Geometric Objects
+
+```{r}
+
+ggplot(data = mpg) +
+  geom_smooth(mapping = aes(x = displ, y = hwy))
+              
+ggplot(data = mpg) +
+  geom_smooth(mapping = aes(x = displ, y = hwy, group = drv))
+    
+ggplot(data = mpg) +
+  geom_smooth(
+    mapping = aes(x = displ, y = hwy, color = drv),
+    show.legend = FALSE)
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy, color = class)) +
+  geom_smooth(mapping = aes(x = displ, y = hwy))
+
+```
+
+
+```{r}
+# Exercícios 3.6.1
+#1) 
+
+ggplot(data = mpg) +
+  geom_boxplot(mapping = aes(x = class, y = hwy))
+
+ggplot(data = mpg) +
+  geom_histogram(mapping = aes(displ), bins=40)
+
+ggplot(data = mpg) +
+  geom_area(mapping = aes(x=displ,y=hwy))
 
 
 
 
 
+```
+
+# 3.7 Statistical transformations
 
 
+```{r}
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut))
 
+library(ggplot2)
+
+ggplot(data = diamonds) + 
+  stat_summary(
+    mapping = aes(x = cut, y = depth),
+    fun.ymin = min,
+    fun.ymax = max,
+    fun.y = median
+  )
+
+```
+
+# 3.8 Position adjustments
+
+```{r}
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, colour = cut))
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, fill = cut))
+
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, fill = clarity))
+
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, fill = clarity), position = "fill")
+
+
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, fill = clarity), position = "dodge")
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy), position = "jitter")
+```
+
+```{r}
+
+# Exercícios 3.8.1
+
+# 1,2,3)
+ggplot(data = mpg) + 
+  geom_jitter(mapping = aes(x = cty, y = hwy), width = 0.5, height = 0.5)
+
+ggplot(data = mpg) + 
+  geom_count(mapping = aes(x = cty, y = hwy))
+
+# 4)
+
+ggplot(data=mpg) +
+  geom_boxplot(mapping=aes(y=displ, x=class))
+
+```
+
+
+# 3.9 Coordinate systems
+
+```{r}
+
+ggplot(data = mpg, mapping = aes(x = class, y = hwy)) + 
+  geom_boxplot()
+ggplot(data = mpg, mapping = aes(x = class, y = hwy)) + 
+  geom_boxplot() +
+  coord_flip()
+
+
+nz <- map_data("nz")
+
+ggplot(nz, aes(long, lat, group = group)) +
+  geom_polygon(fill = "white", colour = "black")
+
+ggplot(nz, aes(long, lat, group = group)) +
+  geom_polygon(fill = "white", colour = "black") +
+  coord_quickmap()
+
+
+bar <- ggplot(data = diamonds) + 
+  geom_bar(
+    mapping = aes(x = cut, fill = cut), 
+    show.legend = FALSE,
+    width = 1
+  ) + 
+  theme(aspect.ratio = 1) +
+  labs(x = NULL, y = NULL)
+
+bar + coord_flip()
+bar + coord_polar()
+```
 
 
 ```{r}
 
 ```
+
+
 
