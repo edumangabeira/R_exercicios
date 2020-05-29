@@ -1,0 +1,238 @@
+---
+title: "AVA2"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+<br>
+
+### AVISO
+
+<br>
+
+Em vez de usar o excel como software de manipulação de planilhas, decidi usar o R, uma linguagem de programação que é capaz de desempenhar as mesmas funções do excel com a vantagem de tornar as manipulações reproduzíveis.
+
+
+
+<br>
+
+### 1- Calcule a média aritmética das variáveis altura e peso.
+
+<br>
+
+Antes de começar, vamos carregar os dados a partir de uma planilha.
+
+```{r}
+library(readr)
+library(dplyr)
+av2julia <- read_csv("av2julia.csv")
+
+clean_dataset <- av2julia %>% 
+  select(paciente='Paciente', altura='Altura (m)', peso='Peso (Kg);;;;') %>%
+  mutate(peso = as.numeric(gsub(";","", peso)))
+
+clean_dataset
+
+```
+
+<br>
+
+### Para calcular a média aritmética, basta somar todos os valores e dividir pelo total de observações.
+
+$$ media_{pesos} = \frac{55+95+138+94+...+80+77+140+116+112}{36} = 89 $$
+
+$$ media_{paltura} = \frac{150+190+195+175+...+175+175+195+190+185}{36} = 175 $$
+
+<br>
+
+##### Média
+
+```{r}
+clean_dataset %>% summarise(altura=mean(altura), peso=mean(peso, na.rm = T))
+```
+
+##### Desvio padrão
+
+```{r}
+clean_dataset %>% summarise(altura=sd(altura), peso=sd(peso, na.rm = T))
+
+```
+
+
+<br>
+
+
+### 2- Encontre o intervalo de 95% confiança para o peso médio dos pacientes. Interprete o resultado. Deixe bem explicado todos os cálculos efetuados.
+
+<br>
+
+Como o número de observações é maior que 30($N > 30$) e a amostra é independente e identicamente distribuída, suponhamos que os dados estão normalmente distribuídos. Logo, basta utilizar a média e o desvio padrão amostrais para construir o intervalo de confiança. O intervalo pode ser encontrado pela fórmula abaixo, onde $\overline{x}$ é a média amostral, $\sigma$ é o desvio padrão e $Z_\frac{a}{2}$ é um valor encontrado na tabela da distribuição normal a partir de uma probabilidade dada por $\frac{a}{2}$, onde $a = 1 - 0.95$.
+
+
+$$ \Big(\overline{x} - Z_{\frac{a}{2}} \frac{\sigma}{\sqrt{n}}   ;\overline{x} + Z_\frac{a}{2} \frac{\sigma}{\sqrt{n}}\Big) $$
+<br>
+
+Logo, fazendo as operações e consultando a tabela da normal:
+
+<br>
+
+$$ \Big(89 - Z_{1-0.025} \frac{22.36324}{\sqrt{36}}   ;89 + Z_{1-0.025} \frac{22.36324}{\sqrt{36}}\Big) =$$
+$$ \Big(89 - Z_{0.975} \frac{22.36324}{\sqrt{36}}   ;89 + Z_{0.975} \frac{22.36324}{\sqrt{36}}\Big) = $$
+
+$$ \Big(89 - 1.96 \frac{22.36324}{\sqrt{36}}   ;89 + 1.96 \frac{22.36324}{\sqrt{36}}\Big) =  $$
+
+$$ \Big(82.0674;95.9326\Big)   $$
+
+
+
+
+<br>
+
+### 3- Trace um gráfico de dispersão para as variáveis altura (X) e peso (Y).
+
+```{r}
+library(ggplot2)
+ggplot(data = clean_dataset) +
+  geom_point(mapping=aes(x=altura, y=peso))
+```
+
+
+<br>
+
+### 4- Calcule e interprete o resultado do coeficiente de correlação linear de Pearson das variáveis altura (X) e peso (Y) de duas maneiras:
+
+<br>
+
+A fórmula para encontrar o coeficiente de correlação de pearson é dada por:
+
+$$\rho(x,y) = \frac{cov(x,y)}{\sigma_x \sigma_y}$$
+<br>
+
+Onde $\sigma_x$ e $\sigma_y$ são os desvios, $cov(x,y) = \sum_{i=1}^{n} \frac{x-(\overline{x})(y-\overline{y})}{n-1}$ e $\overline{x}$ e $\overline{y}$ são as médias.
+
+
+
+#### a) manualmente, justificando os cálculos efetuados;
+
+<br>
+
+Calculando primeiro a covariância:
+
+$$ cov(x,y)=\frac{1}{35}\Big[(55-89)(150-175) +...+ (112-89)(185-175)\Big] =$$
+$$ cov(x,y)= 172.1429 $$
+<br>
+
+Aplicando a fórmula:
+
+<br>
+
+
+$$\rho(x,y) = \frac{cov(x,y)}{\sigma_x \sigma_y}$$
+
+$$\rho(x,y) = \frac{172.1429 }{(10.28175)(22.36324)} =  0.7486647$$
+
+### Interpretação
+
+<br>
+
+Esse resultado ($0.7486647$) pode ser entendido como uma correlação positiva entre as variáveis e essa correlação é moderada. 
+
+<br>
+
+#### b) com auxílio de uma planilha eletrônica.
+
+```{r}
+correlacao <- summarise(clean_dataset, covariancia=cov(altura,peso), 
+                        desvio_x =sd(altura), desvio_y=sd(peso))
+
+correlacao %>% summarise(coef=covariancia/(desvio_x * desvio_y))
+```
+
+<br>
+
+### 5- Encontre a reta de regressão com a variável dependente sendo o peso (Y) e a altura como variável independente (X) de duas maneiras:
+
+
+<br>
+
+Sabemos que para realizar uma regressão linear simples, basta aplicar a fórmula:
+
+$$ y = \alpha + \beta x $$
+<br>
+
+onde $\alpha$ e $\beta$ são encontrados a partir de:
+
+
+$$\beta= \rho(x,y) \frac{\sigma_y} {\sigma_x}$$
+
+<br>
+
+$$ \alpha =\overline{y} - \beta\overline{x}$$
+
+#### a) manualmente, justificando os cálculos efetuados;
+
+<br>
+
+Fazendo os cálculos:
+
+
+
+$$ \beta = 0.748665 * \frac{22.36324}{10.28175} = 1.628378  $$
+$$ \alpha = 89 -1.628378*75 = -195.9661$$
+Portanto:
+
+
+$$ y = -195.9661+ 1.628378 * x $$
+
+<br>
+
+
+#### b) com auxílio de uma planilha eletrônica.
+
+<br>
+
+Usando os valores que foram calculados nos exercícios anteriores acessando a planilha é possível encontrar os coeficientes:
+
+<br>
+
+```{r}
+alpha = 0.748665 * (22.36324/10.28175)
+beta = 89 - alpha * 175
+
+c(beta,"beta") 
+c(alpha,"alpha")
+
+```
+
+
+<br>
+
+### 6- Com base no modelo de regressão linear determinado no item 5, qual será o IMC de uma pessoa com altura de 1,98 metros.
+
+<br>
+
+Fazendo a regressão, estima-se que o peso $y$ dessa pessoa seja:
+
+<br>
+
+$$ y = -195.9661+ 1.628378 * 198 = 126.5$$
+<br>
+
+
+Logo, seu imc será igual a:
+
+$$IMC = \frac{Peso} {Altura * Altura)}$$
+
+$$ IMC = \frac{126.5} {(198 * 198)} = 32.26712 $$
+
+
+
+
+
+
+
+
+
+
