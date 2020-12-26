@@ -1,0 +1,80 @@
+---
+title: "Registros de protestos antirracistas nos EUA - Caso George Floyd"
+author: "Eduardo Freire"
+date: "30/06/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+## Os datasets
+
+Os conjuntos de dados no formato .csv contêm registros(vídeos, imagens, artigos) sobre protestos antirracistas após a morte de George Floyd.
+
+![Protesto antirracista nos EUA](https://www.dw.com/image/53711808_303.jpg)
+
+## Dataset 1
+
+- Mídia(imagem, vídeo)
+- Tipo de fonte(rede social, jornal)
+- Cidade
+- Data
+- Estado
+- Houve violência policial?
+- As forças nacionais estavam presentes?
+- Táticas de repressão utilizadas
+
+
+## Dataset 1
+
+```{r}
+library(readr)
+library(kableExtra)
+library(magrittr)
+
+georgeFloyd <- read_csv("georgeFloyd.csv")
+colnames(georgeFloyd)[c(1:2)] <- c("description","link")
+
+georgeFloyd <- georgeFloyd[c(5,7,8,9,10,16,17, 18)]
+kable(georgeFloyd[70:75,]) %>% 
+  kable_styling(c("striped","condensed"))
+```
+
+## Dataset 2
+
+- Incidente
+- Cidade
+- Data
+- Link	
+
+## Dataset 2
+
+```{r}
+library(readr)
+library(kableExtra)
+library(magrittr)
+
+policia <- read_csv("policiaviolencia.csv")
+policia <- policia[c(1,2,4,5)]
+kable(policia[1:5,]) %>% 
+  kable_styling(c("striped","condensed"))
+```
+
+
+
+
+
+
+## Possíveis perguntas ou visualizações
+
+- Há relação entre os votos presidenciais de cada estado e quantidade de casos de violência policial?
+
+- Um rank do estados com mais casos de violência policial.
+
+- Quais métodos de repressão mais utilizados? Quanto isso custa ao governo?
+
+- Quais mídias mais usadas quando houve violência? Tem alguma relação com o tipo de fonte?
+
+- Fazer um mapa interativo com os registros.
